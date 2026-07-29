@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "CareerHub"
+version = "1.0.0"
+id = "artifacts/careerhub"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19567
+
+[services.development]
+run = "pnpm --filter @workspace/careerhub run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/careerhub", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/careerhub/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19567"
+BASE_PATH = "/"

@@ -1,0 +1,2 @@
+- [Orval + Zod v3 compat](orval-zod-v3.md) — Orval v8.23 generates Zod v4 syntax (`zod.int()`, `zod.email()`); avoid `format: email` and `type: integer` in OpenAPI spec to stay v3-compatible.
+- [Session auth pattern](session-auth.md) — CareerHub uses express-session + connect-pg-simple + bcrypt; SESSION_SECRET env var required; role stored in session.userRole.
